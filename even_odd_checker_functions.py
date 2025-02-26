@@ -1,3 +1,4 @@
+
 def get_integer_input() -> int:
     """
     Prompt the user to enter a valid integer.
