@@ -1,39 +1,44 @@
+"""
+even_odd_checker_functions.py
+
+This part tell if the user input is even or odd
+It consists two functions:
+1. get_integer_input() - Handle user input and validation.
+2. check_even_odd(number) - check if the number is even or odd.
+"""
+
 def get_integer_input() -> int:
     """
-    Prompts the user to enter an integer and validates the input.
-    
+    Ask the user to enter a valid integer.
+
     Returns:
-        int: The integer entered by the user.
-    
-    Raises:
-        ValueError: If the input is not a valid integer.
+        int: The validated integer input by the user.
     """
     while True:
         try:
-            number = int(input("Enter an integer: "))
-            return number
+            number = int(input("Enter an integer: "))  # User input
+            return number  # Return the validated integer
         except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+            print("Error: Invalid input. Please enter a valid integer.")  # check non-integer input
+
 
 def check_even_odd(number: int) -> str:
     """
-    Determines if the given integer is even or odd.
-    
-    Parameters:
+    Determine whether a given number is even or odd.
+
+    Args:
         number (int): The integer to check.
-    
+
     Returns:
-        str: A formatted string indicating whether the number is even or odd.
+        str: A message indicating if the number is even or odd.
     """
     if number % 2 == 0:
-        return f"{number} is an Even number."
-    else:
-        return f"{number} is an Odd number."
+        return f"{number} is an Even number."  # Return message for even number
+    return f"{number} is an Odd number."  # Return message for odd number
 
-if __name__ == "__main__":
-    # Get user input
-    number = get_integer_input()
-    
-    # Check if the number is even or odd and display the result
-    result = check_even_odd(number)
-    print(result)
+
+if _name_ == "_main_":
+    # Main program execution
+    user_number = get_integer_input()  # Get user input
+    result = check_even_odd(user_number)  # Check even/odd status
+    print(result)  # Display the result
